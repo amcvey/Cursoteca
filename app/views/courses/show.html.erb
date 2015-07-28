@@ -15,16 +15,16 @@
   <%= image_tag(@course.photo, style: 'width:300px')  %>
 </p>
 
-<h4>Direcciones </h4>
+<h4>Addresses </h4>
  
 <% if @course.subsidiaries.any? %>
   <ul>
     <% @course.subsidiaries.each do |subsidiary| %>
-    <li><%= link_to subsidiary, subsidiary %></li> 
+    <li><%= link_to subsidiary.address, subsidiary %></li> 
     <% end %>
   </ul>
 <% else %>
-  <p>No hay direcciones </p>
+  <p>There's no address </p>
 <% end %>
 
 <%= link_to 'Edit', edit_course_path(@course) if can? :edit, @course %> |
