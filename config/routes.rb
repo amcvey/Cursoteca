@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :companies
+  resources :subsidiaries
   devise_for :users
   resources :courses
   # The priority is based upon order of creation: first created -> highest priority.

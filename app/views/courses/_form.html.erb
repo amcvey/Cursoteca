@@ -23,6 +23,19 @@
     <%= f.label :photo %><br>
     <%= f.file_field :photo %>
   </div>
+
+  <h4>Direcciones</h4>
+ 
+  <%= f.fields_for :subsidiaries do | subsidiary | %>
+    <div class="subsidiaries_fields">
+      <div class="fields">
+        <%= subsidiary.label :address, "Direccion" %><br>
+        <%= subsidiary.text_field :address %>
+        <%= subsidiary.check_box :_destroy %>
+        <%= subsidiary.label :_destroy, "Borrar" %>
+      </div>
+    </div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
