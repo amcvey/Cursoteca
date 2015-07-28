@@ -9,7 +9,6 @@ class Ability
         can :read, [Course]
         can :create, [Course]
         can [:update, :destroy, :edit], [Course], user_id: user.id
-        can :edit, [Company], user_id: user.id
         
       elsif user.admin?
         can :manage, :all

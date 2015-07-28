@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rut: MyString
+  name: MyString
+  business_name: MyString
+  business_rotation: MyString
+  bank_account: 1
+  email: MyString
+
+two:
+  rut: MyString
+  name: MyString
+  business_name: MyString
+  business_rotation: MyString
+  bank_account: 1
+  email: MyString
