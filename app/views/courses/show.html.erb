@@ -15,5 +15,5 @@
   <%= @course.photo %>
 </p>
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Edit', edit_course_path(@course) if can? :edit, @course %> |
 <%= link_to 'Back', courses_path %>
