@@ -15,5 +15,17 @@
   <%= image_tag(@course.photo, style: 'width:300px')  %>
 </p>
 
+<h4>Direcciones </h4>
+ 
+<% if @course.subsidiaries.any? %>
+  <ul>
+    <% @course.subsidiaries.each do |subsidiary| %>
+    <li><%= link_to subsidiary, subsidiary %></li> 
+    <% end %>
+  </ul>
+<% else %>
+  <p>No hay direcciones </p>
+<% end %>
+
 <%= link_to 'Edit', edit_course_path(@course) if can? :edit, @course %> |
 <%= link_to 'Back', courses_path %>
