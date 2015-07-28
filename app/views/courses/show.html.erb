@@ -12,7 +12,7 @@
 
 <p>
   <strong>Photo:</strong>
-  <%= @course.photo %>
+  <%= image_tag(@course.photo, style: 'width:300px')  %>
 </p>
 
 <%= link_to 'Edit', edit_course_path(@course) if can? :edit, @course %> |

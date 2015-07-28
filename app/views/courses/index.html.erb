@@ -17,7 +17,7 @@
       <tr>
         <td><%= course.name %></td>
         <td><%= course.description %></td>
-        <td><%= course.photo %></td>
+        <td><%= image_tag(course.photo, style: 'width:300px') %></td>
         <td><%= link_to 'Show', course %></td>
         <td><%= link_to 'Edit', edit_course_path(course) if can? :edit, course %></td>
         <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } if can? :destroy, course %></td>
