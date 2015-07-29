@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User Id:</strong>
+  <%= @inscription.user_id %>
+</p>
+
+<p>
+  <strong>Version Course:</strong>
+  <%= @inscription.version_course_id %>
+</p>
+
+<%= link_to 'Edit', edit_inscription_path(@inscription) %> |
+<%= link_to 'Back', inscriptions_path %>
+
+
+
