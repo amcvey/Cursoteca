@@ -1,0 +1,28 @@
+<h1>Inscriptions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User Id</th>
+      <th>Version Course</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @inscriptions.each do |inscription| %>
+      <tr>
+        <td><%= inscription.user_id %></td>
+        <td><%= inscription.version_course_id %></td>
+        <td><%= link_to 'Show', inscription %></td>
+        <td><%= link_to 'Edit', edit_inscription_path(inscription) %></td>
+        <td><%= link_to 'Destroy', inscription, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<%= link_to 'Back', courses_path %>

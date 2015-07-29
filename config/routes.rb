@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  
+
+  resources :inscriptions, only: [:show, :index]
   resources :companies
   resources :version_courses
   resources :subsidiaries
