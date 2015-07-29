@@ -4,7 +4,8 @@ class Course < ActiveRecord::Base
   has_many :subsidiaries
   has_many :version_courses, dependent: :destroy
   accepts_nested_attributes_for :version_courses,
-    reject_if: proc {|attr| attr['price', 'commission', 'session_number', 'start_date', 'end_date', 'room'].blank? }
+    reject_if: proc {|attr| attr['price'].blank?  || attr['commission'].blank? || attr['start_date'].blank? || attr['end_date'].blank? || attr['room'].blank? || attr['session_number'].blank? }
+    
 
   def to_s
     name
