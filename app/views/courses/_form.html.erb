@@ -36,6 +36,27 @@
       </div>
     </div>
   <% end %>
+
+  <h3>Course Versions</h3>
+ 
+  <%= f.fields_for :version_courses do | version_course | %>
+    <div class="version_courses_fields">
+      <div class="fields">
+        <%= version_course.label :start_date, "Start Date" %><br>
+        <%= version_course.date_field :start_date %> <br>
+        <%= version_course.label :end_date, "End Date" %><br>
+        <%= version_course.date_field :end_date %> <br>
+        <%= version_course.label :room, "Room" %><br>
+        <%= version_course.number_field :room %> <br>
+        <%= version_course.label :session_number, "Session Number" %><br>
+        <%= version_course.number_field :session_number %> <br>
+        <%= version_course.label :price, "Price" %><br>
+        <%= version_course.number_field :price %> <br>
+        <%= version_course.label :commission, "Commission" %><br>
+        <%= version_course.number_field :commission %>
+      </div>
+    </div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

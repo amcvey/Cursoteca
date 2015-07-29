@@ -27,5 +27,17 @@
   <p>There's no address </p>
 <% end %>
 
+<h4>Course Version</h4>
+
+<% if  @course.version_courses.any? %>
+  <ul>
+    <%  @course.version_courses.each do |version_course| %>
+    <li><%= link_to version_course, version_course %></li> 
+    <% end %>
+  </ul>
+<% else %>
+  <p>There's no Course version</p>
+<% end %>
+
 <%= link_to 'Edit', edit_course_path(@course) if can? :edit, @course %> |
 <%= link_to 'Back', courses_path %>
