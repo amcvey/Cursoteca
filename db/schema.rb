@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150729142248) do
+ActiveRecord::Schema.define(version: 20150729223050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,19 +41,37 @@ ActiveRecord::Schema.define(version: 20150729142248) do
   create_table "inscriptions", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "version_course_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.integer  "purchased_course_id"
+  end
+
+  add_index "inscriptions", ["purchased_course_id"], name: "index_inscriptions_on_purchased_course_id", using: :btree
+  add_index "inscriptions", ["user_id"], name: "index_inscriptions_on_user_id", using: :btree
+  add_index "inscriptions", ["version_course_id"], name: "index_inscriptions_on_version_course_id", using: :btree
+
+  create_table "payments", force: :cascade do |t|
+    t.string   "order_id"
+    t.string   "transaction_id"
+    t.integer  "amount"
+    t.string   "authorization"
+    t.integer  "card_last_numbers"
+    t.boolean  "status"
+    t.string   "session_id"
+    t.string   "payment_type"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end
-
-  add_index "inscriptions", ["user_id"], name: "index_inscriptions_on_user_id", using: :btree
-  add_index "inscriptions", ["version_course_id"], name: "index_inscriptions_on_version_course_id", using: :btree
 
   create_table "purchased_courses", force: :cascade do |t|
     t.datetime "date"
     t.integer  "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "payment_id"
   end
+
+  add_index "purchased_courses", ["payment_id"], name: "index_purchased_courses_on_payment_id", using: :btree
 
   create_table "subsidiaries", force: :cascade do |t|
     t.string   "address"
@@ -100,8 +118,10 @@ ActiveRecord::Schema.define(version: 20150729142248) do
   add_index "version_courses", ["course_id"], name: "index_version_courses_on_course_id", using: :btree
 
   add_foreign_key "courses", "companies"
+  add_foreign_key "inscriptions", "purchased_courses"
   add_foreign_key "inscriptions", "users"
   add_foreign_key "inscriptions", "version_courses"
+  add_foreign_key "purchased_courses", "payments"
   add_foreign_key "subsidiaries", "courses"
   add_foreign_key "version_courses", "courses"
 end
