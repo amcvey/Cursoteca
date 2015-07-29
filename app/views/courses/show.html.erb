@@ -15,7 +15,7 @@
   <%= image_tag(@course.photo, style: 'width:300px')  %>
 </p>
 
-<h4>Addresses </h4>
+<h3>Addresses </h3>
  
 <% if @course.subsidiaries.any? %>
   <ul>
@@ -25,6 +25,18 @@
   </ul>
 <% else %>
   <p>There's no address </p>
+<% end %>
+
+<h3>Course Version</h3>
+
+<% if  @course.version_courses.any? %>
+  <ul>
+    <%  @course.version_courses.each do |version_course| %>
+    <li><%= link_to version_course.start_date.to_s,  edit_course_path %></li> 
+    <% end %>
+  </ul>
+<% else %>
+  <p>There's no Course version</p>
 <% end %>
 
 <%= link_to 'Edit', edit_course_path(@course) if can? :edit, @course %> |

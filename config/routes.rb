@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  
   resources :companies
+  resources :version_courses
   resources :subsidiaries
   devise_for :users
   resources :courses
