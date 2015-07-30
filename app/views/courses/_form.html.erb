@@ -26,7 +26,7 @@
 
  
   <%= f.fields_for :version_courses do | version_course | %>
-   <h3>Course Versions</h3>
+   <h3>Course Versions </h3>
     <div class="version_courses_fields">
       <div class="fields">
         <%= version_course.label :start_date, "Start Date" %><br>
@@ -35,7 +35,7 @@
         <%= version_course.date_field :end_date %> <br>
         <%= version_course.label :room, "Room" %><br>
         <%= version_course.number_field :room %> <br>
-        <%= version_course.label :session_number, "Session Number" %><br>
+        <%= version_course.label :session_number, "Number opf Sessions" %><br>
         <%= version_course.number_field :session_number %> <br>
         <%= version_course.label :price, "Price" %><br>
         <%= version_course.number_field :price %> <br>

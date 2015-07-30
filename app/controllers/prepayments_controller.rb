@@ -1,0 +1,2 @@
+class PrepaymentsController < ApplicationController
+end
