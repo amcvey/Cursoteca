@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150729223050) do
+ActiveRecord::Schema.define(version: 20150730013333) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,15 +73,6 @@ ActiveRecord::Schema.define(version: 20150729223050) do
 
   add_index "purchased_courses", ["payment_id"], name: "index_purchased_courses_on_payment_id", using: :btree
 
-  create_table "subsidiaries", force: :cascade do |t|
-    t.string   "address"
-    t.integer  "course_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "subsidiaries", ["course_id"], name: "index_subsidiaries_on_course_id", using: :btree
-
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "encrypted_password",     default: "", null: false
@@ -122,6 +113,5 @@ ActiveRecord::Schema.define(version: 20150729223050) do
   add_foreign_key "inscriptions", "users"
   add_foreign_key "inscriptions", "version_courses"
   add_foreign_key "purchased_courses", "payments"
-  add_foreign_key "subsidiaries", "courses"
   add_foreign_key "version_courses", "courses"
 end

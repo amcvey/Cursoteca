@@ -1,2 +1,0 @@
-module SubsidiariesHelper
-end

@@ -37,9 +37,10 @@
     </div>
   <% end %>
 
-  <h3>Course Versions</h3>
+ 
  
   <%= f.fields_for :version_courses do | version_course | %>
+   <h3>Course Versions</h3>
     <div class="version_courses_fields">
       <div class="fields">
         <%= version_course.label :start_date, "Start Date" %><br>
