@@ -15,17 +15,7 @@
   <%= image_tag(@course.photo, style: 'width:300px')  %>
 </p>
 
-<p>Addresses </p>
- 
-<% if @course.subsidiaries.any? %>
-  <ul>
-    <% @course.subsidiaries.each do |subsidiary| %>
-    <li><%= link_to subsidiary.address, subsidiary %></li> 
-    <% end %>
-  </ul>
-<% else %>
-  <p>There's no address </p>
-<% end %>
+
 
 <% if @course.version_courses.any? %>
 

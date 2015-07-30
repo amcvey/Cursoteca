@@ -12,19 +12,17 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
-    
+
   end
 
   # GET /courses/new
   def new
     @course = Course.new
-    @course.subsidiaries.build
     @course.version_courses.build
   end
 
   # GET /courses/1/edit
   def edit
-    @course.subsidiaries.build
     @course.version_courses.build
   end
 
@@ -76,6 +74,6 @@ class CoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:name, :description, :photo, subsidiaries_attributes: [:id, :address, :_destroy], version_courses_attributes: [:id, :price, :commission, :start_date, :end_date, :room, :session_number])
+      params.require(:course).permit(:name, :description, :photo, version_courses_attributes: [:id, :price, :commission, :start_date, :end_date, :room, :session_number])
     end
 end
