@@ -6,6 +6,7 @@ class PaymentsController < ApplicationController
   def index
     @payments = Payment.all
     
+    
   end
 
   # GET /companies/1
