@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :companies
   resources :version_courses
   resources :subsidiaries
+  resources :prepayments, only: [:index]
   devise_for :users
   resources :courses
   # The priority is based upon order of creation: first created -> highest priority.
