@@ -4,4 +4,5 @@ class PrepaymentsController < ApplicationController
     @version_course= VersionCourse.first
     @course = Course.first
   end
+  
 end

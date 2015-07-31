@@ -4,7 +4,8 @@
 
 <%= select_tag :version_course_id, options_from_collection_for_select(VersionCourse.all, :id, :start_date), prompt: 'Fechas disponibles'%>
 
-<%= select_tag(:option, options_for_select([['1 seat', 1], ['2 seats', 2], ['3 seats', 3], ['4 seats', 4], ['5 seats', 5]])) %>
+<%= select_tag(:option, options_for_select([['1 seat', 1], ['2 seats', 2], ['3 seats', 3], ['4 seats', 4], ['5 seats', 5]]), class: 'js-seats') %>
 
-<h3> Price per Seat: <%= @version_course.price %></h3>
+<h3>Price per Seat: <span class="js-price"><%= number_to_currency(@version_course.price, precision: 0) %></span></h3>
 
+<h3>Valor total: <b class="js-total-price"></b></h3>
