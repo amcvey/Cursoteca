@@ -1,28 +1,35 @@
-<h1> User Information </h1> <p> Already signed up? <%= link_to "Login", user_session_path %> </p>
+<% if user_signed_in? %>
+		<h1> Attendee Information </h1> 
+		
 
-<%= form_for("user", :url => user_session_path) do |f| %>
-  <%= f.label :name %><br />
-  <%= f.text_field :name %>
-  <%= f.label :email %><br />
-  <%= f.text_field :email %>
-  <%= f.password_field :password %>
-  <%= f.check_box :remember_me %>
-  <%= f.label :remember_me %>
-  <%= f.submit 'Sign in' %>
-  <%= link_to "Forgot your password?", new_password_path('user') %>
-<% end %> 
+		<form accept-charset="UTF-8" action="" method="post">
+		  <input name="utf8" type="hidden" value="&#x2713;" /> 
+		  <label >Name:</label>
+		  <input name="name" type="text" /> <br>
+		  <label >Email:</label>
+		  <input name="email" type="text" /> <br>
+		  <label >Phone:</label>
+		  <input name="phone" type="number" /> <br>
+		 
+		</form>
 
-<h1> Class Information </h1>
+		<h1> Class Information </h1>
 
-<h3> Course: <%= @course.name %></h3>
-<h3> Address: <%= @version_course.address %></h3>
+		<h3> Course: <%= @course.name %></h3>
+		<h3> Address: <%= @version_course.address %></h3>
 
-<%= select_tag :version_course_id, options_from_collection_for_select(VersionCourse.all, :id, :start_date), prompt: 'Fechas disponibles'%>
+		<%= select_tag :version_course_id, options_from_collection_for_select(VersionCourse.all, :id, :start_date), prompt: 'Fechas disponibles'%>
 
-<%= select_tag(:option, options_for_select([['1 seat', 1], ['2 seats', 2], ['3 seats', 3], ['4 seats', 4], ['5 seats', 5]]), class: 'js-seats') %>
+		<%= select_tag(:option, options_for_select([['1 seat', 1], ['2 seats', 2], ['3 seats', 3], ['4 seats', 4], ['5 seats', 5]]), class: 'js-seats') %>
 
-<h3>Price per Seat: <span class="js-price"><%= number_to_currency(@version_course.price, precision: 0) %></span></h3>
+		<h3>Price per Seat: <span class="js-price"><%= number_to_currency(@version_course.price, precision: 0) %></span></h3>
 
-<h3>Valor total: <b class="js-total-price"></b></h3>
+		<h3>Valor total: <b class="js-total-price"></b></h3>
 
-<%= link_to 'Pay', payments_path   %>
+		<%= link_to 'Pay', payments_path   %>
+
+<% else %>
+		
+		
+<% end %>
+

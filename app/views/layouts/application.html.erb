@@ -12,11 +12,11 @@
 	<span> Hi <%= current_user.name %></span>
 			<%= link_to 'exit', destroy_user_session_path, method: 'delete'  %>
 <% else %>
+		
 			<%= link_to 'login', new_user_session_path  %>
 			<%= link_to 'sign in', new_user_registration_path  %>
 		
 <% end %>
-
 
 <%= yield %>
 
