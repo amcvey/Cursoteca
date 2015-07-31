@@ -1,6 +1,7 @@
 <h1> Class Information </h1>
 
 <h3> Course: <%= @course.name %></h3>
+<h3> Address: <%= @version_course.address %></h3>
 
 <%= select_tag :version_course_id, options_from_collection_for_select(VersionCourse.all, :id, :start_date), prompt: 'Fechas disponibles'%>
 
@@ -9,3 +10,5 @@
 <h3>Price per Seat: <span class="js-price"><%= number_to_currency(@version_course.price, precision: 0) %></span></h3>
 
 <h3>Valor total: <b class="js-total-price"></b></h3>
+
+<%= link_to 'Pay', payments_path   %>
