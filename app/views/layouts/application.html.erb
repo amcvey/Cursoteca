@@ -5,6 +5,128 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"> C u r s o t e c a </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Arte <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Pintura</a></li>
+            <li><a href="#">Comedy</a></li>
+            <li><a href="#">Sculpture</a></li>
+            <li><a href="#">Painting</a></li>
+            <li><a href="#">Acting</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Actuación <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Greda</a></li>
+            <li><a href="#">Comedy</a></li>
+            <li><a href="#">Sculpture</a></li>
+            <li><a href="#">Painting</a></li>
+            <li><a href="#">Acting</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cocina <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Greda</a></li>
+            <li><a href="#">Comedy</a></li>
+            <li><a href="#">Sculpture</a></li>
+            <li><a href="#">Painting</a></li>
+            <li><a href="#">Acting</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Baile <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Greda</a></li>
+            <li><a href="#">Comedy</a></li>
+            <li><a href="#">Sculpture</a></li>
+            <li><a href="#">Painting</a></li>
+            <li><a href="#">Acting</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Niños <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Greda</a></li>
+            <li><a href="#">Comedy</a></li>
+            <li><a href="#">Sculpture</a></li>
+            <li><a href="#">Painting</a></li>
+            <li><a href="#">Acting</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Lenguajes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Greda</a></li>
+            <li><a href="#">Comedy</a></li>
+            <li><a href="#">Sculpture</a></li>
+            <li><a href="#">Painting</a></li>
+            <li><a href="#">Acting</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Musica <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Greda</a></li>
+            <li><a href="#">Comedy</a></li>
+            <li><a href="#">Sculpture</a></li>
+            <li><a href="#">Painting</a></li>
+            <li><a href="#">Acting</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profesional <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Greda</a></li>
+            <li><a href="#">Comedy</a></li>
+            <li><a href="#">Sculpture</a></li>
+            <li><a href="#">Painting</a></li>
+            <li><a href="#">Acting</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tecnologia <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Greda</a></li>
+            <li><a href="#">Comedy</a></li>
+            <li><a href="#">Sculpture</a></li>
+            <li><a href="#">Painting</a></li>
+            <li><a href="#">Acting</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ofertas<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Greda</a></li>
+            <li><a href="#">Comedy</a></li>
+            <li><a href="#">Sculpture</a></li>
+            <li><a href="#">Painting</a></li>
+            <li><a href="#">Acting</a></li>
+          </ul>
+        </li>
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 </head>
 <body>
 
@@ -17,6 +139,15 @@
 			<%= link_to 'sign in', new_user_registration_path  %>
 		
 <% end %>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 <%= yield %>
 

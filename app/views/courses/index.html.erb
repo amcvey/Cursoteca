@@ -1,3 +1,48 @@
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="best.jpg" alt="cocina">
+    </div>
+
+    <div class="item">
+     <%= image_tag('best.jpg', class: "images") %>
+    </div>
+     <div class="item">
+     <%= image_tag('cocina.jpg', class: "images") %>
+    </div>
+     <div class="item">
+     <%= image_tag('music.jpg', class: "images") %>
+    </div>
+     <div class="item">
+     <%= image_tag('pintura.jpg', class: "images") %>
+    </div>
+     <div class="item">
+     <%= image_tag('tennis.jpg', class: "images") %>
+    </div>
+
+  
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Courses</h1>
