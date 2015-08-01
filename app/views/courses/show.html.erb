@@ -19,38 +19,38 @@
 
 <% if @course.version_courses.any? %>
 
-<% @course.version_courses.each do |version_course| %>
+
 
     <p>
       <strong>Room:</strong>
-      <%= version_course.room %>
+      <%= @version_course.room %>
     </p>
 
     <p>
       <strong> Number of Sessions:</strong>
-      <%= version_course.session_number %>
+      <%= @version_course.session_number %>
     </p>
 
     <p>
       <strong>Price:</strong>
-      <%= version_course.price %>
+      <%= @version_course.price %>
     </p>
 
     <p>
       <strong>Start Date:</strong>
-      <%= version_course.start_date %>
+      <%= @version_course.start_date %>
     </p>
 
     <p>
       <strong>End Date:</strong>
-      <%= version_course.end_date %>
+      <%= @version_course.end_date %>
     </p>
 
     <p>
       <strong>Address:</strong>
-      <%= version_course.address %>
+      <%= @version_course.address %>
     </p>
-  <% end %>
+  
 
 <% else %>
   <p>There's no Course version</p>

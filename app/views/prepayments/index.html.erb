@@ -1,17 +1,5 @@
 <% if user_signed_in? %>
-		<h1> Attendee Information </h1> 
 		
-
-		<form accept-charset="UTF-8" action="" method="post">
-		  <input name="utf8" type="hidden" value="&#x2713;" /> 
-		  <label >Name:</label>
-		  <input name="name" type="text" /> <br>
-		  <label >Email:</label>
-		  <input name="email" type="text" /> <br>
-		  <label >Phone:</label>
-		  <input name="phone" type="number" /> <br>
-		 
-		</form>
 
 		<h1> Class Information </h1>
 
@@ -25,6 +13,24 @@
 		<h3>Price per Seat: <span class="js-price"><%= number_to_currency(@version_course.price, precision: 0) %></span></h3>
 
 		<h3>Valor total: <b class="js-total-price"></b></h3>
+
+	<h1> Attendee Information </h1> 
+		
+		<!-- Mejorar codigo  -->
+		<%= form_for("inscription", :url => inscriptions_path) do |f| %>
+
+		<div id="seat1" style="display:block;"><%= render 'form', f: f %></div>
+		<div id="seat2" style="display:none;"><%= render 'form', f: f %></div>
+		<div id="seat3" style="display:none;"><%= render 'form', f: f %></div>
+		<div id="seat4" style="display:none;"><%= render 'form', f: f %></div>
+		<div id="seat5" style="display:none;"><%= render 'form', f: f %></div>
+
+		  
+		<%= f.submit 'Save & Enroll' %>
+
+		<% end %>
+
+		
 
 		<%= link_to 'Pay', payments_path   %>
 
