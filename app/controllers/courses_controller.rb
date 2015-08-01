@@ -12,6 +12,7 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
+    @version_course = VersionCourse.last
     
   end
 
